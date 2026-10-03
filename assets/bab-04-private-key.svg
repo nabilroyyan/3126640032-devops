@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="430" viewBox="0 0 960 430" role="img" aria-labelledby="title desc">
+  <title id="title">Penyimpanan private key</title><desc id="desc">Private key diberikan saat runtime dari secret manager atau mount read only ke proxy dengan akses minimum, lalu dirotasi dan diaudit.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#315b76"/></marker></defs>
+  <rect width="960" height="430" rx="18" fill="#f3f7f8"/><text x="40" y="48" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#183544">Private key sebagai secret runtime</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <rect x="44" y="139" width="205" height="100" rx="14" fill="#e8eef4" stroke="#66849a" stroke-width="2"/><text x="146" y="176" font-size="17" font-weight="700" fill="#183544">Secret manager</text><text x="146" y="201" font-size="13" fill="#526b77">pilihan produksi</text><text x="146" y="222" font-size="12" fill="#526b77">policy + audit access</text>
+    <rect x="44" y="278" width="205" height="78" rx="14" fill="#fff1d9" stroke="#c28b38" stroke-width="2"/><text x="146" y="309" font-size="16" font-weight="700" fill="#694d23">Mount read-only</text><text x="146" y="334" font-size="12" fill="#694d23">pilihan lab, host terlindungi</text>
+    <rect x="364" y="184" width="205" height="112" rx="14" fill="#d9edf1" stroke="#4a8794" stroke-width="2"/><text x="466" y="222" font-size="18" font-weight="700" fill="#183544">Runtime secret</text><text x="466" y="248" font-size="13" fill="#315b76">permission minimum</text><text x="466" y="270" font-size="13" fill="#315b76">tidak masuk image / repo</text>
+    <rect x="690" y="184" width="218" height="112" rx="14" fill="#e4f0e3" stroke="#648c66" stroke-width="2"/><text x="799" y="222" font-size="18" font-weight="700" fill="#183544">Proxy TLS</text><text x="799" y="248" font-size="13" fill="#46684a">hanya proses berwenang</text><text x="799" y="270" font-size="13" fill="#46684a">baca key untuk handshake</text>
+  </g>
+  <g fill="none" stroke="#315b76" stroke-width="3" marker-end="url(#arrow)"><path d="M249 190 C302 190 310 215 364 220"/><path d="M249 317 C308 317 311 267 364 258"/><path d="M569 240 H690"/></g>
+  <rect x="365" y="338" width="543" height="50" rx="11" fill="#ffffff" stroke="#98b4c0"/><text x="636" y="360" text-anchor="middle" font-family="Arial,sans-serif" font-size="14" font-weight="700" fill="#183544">Rotasi terencana  ->  reload  ->  verifikasi  ->  audit</text><text x="636" y="379" text-anchor="middle" font-family="Arial,sans-serif" font-size="12" fill="#526b77">Batasi akses host; read-only bukan pengganti kontrol akses.</text>
+  <text x="40" y="407" font-family="Arial,sans-serif" font-size="13" fill="#9a4e43">Jangan commit private key atau menyalinnya ke image dan log.</text>
+</svg>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Liveness dan readiness</title><desc id="desc">Liveness mengatur restart, readiness mengatur apakah service menerima trafik.</desc>
+  <rect width="960" height="420" rx="18" fill="#f3f7f8"/><text x="40" y="48" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#183544">Dua health check, dua keputusan</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="42" y="88" width="416" height="270" rx="15" fill="#ffffff" stroke="#98b4c0" stroke-width="2"/><rect x="502" y="88" width="416" height="270" rx="15" fill="#ffffff" stroke="#98b4c0" stroke-width="2"/>
+    <text x="68" y="127" font-size="21" font-weight="700" fill="#183544">Liveness</text><text x="68" y="155" font-size="14" fill="#526b77">Pertanyaan: proses masih hidup?</text>
+    <rect x="74" y="182" width="146" height="58" rx="10" fill="#d9edf1" stroke="#4a8794"/><text x="147" y="217" text-anchor="middle" font-size="15" font-weight="700" fill="#183544">Probe gagal</text>
+    <path d="M220 211 H274" stroke="#315b76" stroke-width="3"/><rect x="274" y="182" width="150" height="58" rx="10" fill="#f8e2de" stroke="#b86e5e"/><text x="349" y="217" text-anchor="middle" font-size="15" font-weight="700" fill="#743d33">Restart container</text>
+    <text x="68" y="279" font-size="13" fill="#526b77">Gagal palsu dapat memicu restart berulang.</text><text x="68" y="302" font-size="13" fill="#526b77">Probe harus mencerminkan kondisi proses.</text>
+    <text x="528" y="127" font-size="21" font-weight="700" fill="#183544">Readiness</text><text x="528" y="155" font-size="14" fill="#526b77">Pertanyaan: siap menerima request?</text>
+    <rect x="534" y="182" width="146" height="58" rx="10" fill="#d9edf1" stroke="#4a8794"/><text x="607" y="217" text-anchor="middle" font-size="15" font-weight="700" fill="#183544">Probe gagal</text>
+    <path d="M680 211 H734" stroke="#315b76" stroke-width="3"/><rect x="734" y="182" width="150" height="58" rx="10" fill="#fff1d9" stroke="#c28b38"/><text x="809" y="207" text-anchor="middle" font-size="14" font-weight="700" fill="#694d23">Stop kirim trafik</text><text x="809" y="226" text-anchor="middle" font-size="12" fill="#694d23">sementara</text>
+    <text x="528" y="279" font-size="13" fill="#526b77">Proses tetap berjalan, endpoint dikeluarkan</text><text x="528" y="302" font-size="13" fill="#526b77">dari routing hingga kembali siap.</text>
+  </g>
+  <text x="40" y="392" font-family="Arial,sans-serif" font-size="14" fill="#526b77">Status container running saja tidak membuktikan aplikasi siap melayani trafik.</text>
+</svg>

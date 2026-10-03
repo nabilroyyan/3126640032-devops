@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+  <title id="title">Arsitektur Apache dan Nginx</title><desc id="desc">Perbandingan Apache dengan MPM dan Nginx dengan master worker serta event loop.</desc>
+  <rect width="960" height="440" rx="18" fill="#f3f7f8"/><text x="40" y="48" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#183544">Dua model pemrosesan web server</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="36" y="76" width="430" height="292" rx="15" fill="#ffffff" stroke="#98b4c0" stroke-width="2"/><rect x="494" y="76" width="430" height="292" rx="15" fill="#ffffff" stroke="#98b4c0" stroke-width="2"/>
+    <text x="60" y="112" font-size="22" font-weight="700" fill="#183544">Apache HTTP Server</text><text x="60" y="139" font-size="14" fill="#526b77">MPM menentukan strategi proses dan thread</text>
+    <rect x="65" y="164" width="118" height="52" rx="9" fill="#d9edf1" stroke="#4a8794"/><text x="124" y="195" text-anchor="middle" font-size="16" font-weight="700" fill="#183544">Client</text>
+    <rect x="225" y="154" width="207" height="74" rx="10" fill="#e8eef4" stroke="#66849a"/><text x="328" y="181" text-anchor="middle" font-size="16" font-weight="700" fill="#183544">Apache MPM</text><text x="328" y="205" text-anchor="middle" font-size="13" fill="#526b77">prefork / worker / event</text>
+    <path d="M183 190 H225" stroke="#315b76" stroke-width="3"/><path d="M432 190 H447 V248 H405" fill="none" stroke="#315b76" stroke-width="2"/><path d="M447 248 H275" stroke="#315b76" stroke-width="2"/>
+    <rect x="240" y="238" width="148" height="44" rx="8" fill="#f3f7f8" stroke="#98b4c0"/><text x="314" y="266" text-anchor="middle" font-size="14" fill="#183544">proses / thread</text>
+    <text x="60" y="319" font-size="13" fill="#526b77">Kapasitas dan pola konkurensi bergantung</text><text x="60" y="340" font-size="13" fill="#526b77">pada MPM serta konfigurasi yang dipilih.</text>
+    <text x="518" y="112" font-size="22" font-weight="700" fill="#183544">Nginx</text><text x="518" y="139" font-size="14" fill="#526b77">Master mengelola worker event-driven</text>
+    <rect x="521" y="164" width="118" height="52" rx="9" fill="#d9edf1" stroke="#4a8794"/><text x="580" y="195" text-anchor="middle" font-size="16" font-weight="700" fill="#183544">Client</text>
+    <rect x="680" y="154" width="204" height="60" rx="10" fill="#e8eef4" stroke="#66849a"/><text x="782" y="190" text-anchor="middle" font-size="16" font-weight="700" fill="#183544">Master process</text>
+    <rect x="680" y="247" width="204" height="72" rx="10" fill="#e4f0e3" stroke="#648c66"/><text x="782" y="276" text-anchor="middle" font-size="16" font-weight="700" fill="#183544">Worker processes</text><text x="782" y="300" text-anchor="middle" font-size="13" fill="#46684a">event loop, banyak koneksi</text>
+    <path d="M639 190 H680" stroke="#315b76" stroke-width="3"/><path d="M782 214 V247" stroke="#315b76" stroke-width="3"/>
+    <text x="518" y="348" font-size="13" fill="#526b77">Worker menangani I/O asynchronous;</text><text x="518" y="366" font-size="13" fill="#526b77">batas resource dan upstream tetap berlaku.</text>
+  </g>
+  <text x="40" y="407" font-family="Arial,sans-serif" font-size="13" fill="#526b77">Keduanya dapat menyajikan konten dan menjadi reverse proxy; uji sesuai workload.</text>
+</svg>

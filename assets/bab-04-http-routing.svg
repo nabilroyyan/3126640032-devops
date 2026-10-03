@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="450" viewBox="0 0 960 450" role="img" aria-labelledby="title desc">
+  <title id="title">HTTP routing dan trusted header</title><desc id="desc">Proxy memilih upstream menurut host dan path, menimpa header forwarded, dan backend hanya mempercayai proxy.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#315b76"/></marker></defs>
+  <rect width="960" height="450" rx="18" fill="#f3f7f8"/><text x="40" y="48" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#183544">HTTP routing dan trusted header</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <rect x="42" y="148" width="150" height="88" rx="13" fill="#ffffff" stroke="#98b4c0" stroke-width="2"/><text x="117" y="183" font-size="18" font-weight="700" fill="#183544">Client</text><text x="117" y="208" font-size="13" fill="#526b77">request HTTP</text>
+    <rect x="292" y="120" width="275" height="148" rx="14" fill="#d9edf1" stroke="#4a8794" stroke-width="2"/><text x="429" y="154" font-size="18" font-weight="700" fill="#183544">Reverse proxy</text><text x="429" y="184" font-size="14" fill="#315b76">match host + path</text><text x="429" y="208" font-size="14" fill="#315b76">hapus / timpa forwarded header</text><text x="429" y="235" font-size="12" fill="#526b77">Host | X-Forwarded-For | Proto</text>
+    <rect x="700" y="92" width="205" height="74" rx="12" fill="#ffffff" stroke="#648c66" stroke-width="2"/><text x="802" y="123" font-size="17" font-weight="700" fill="#183544">Web upstream</text><text x="802" y="147" font-size="13" fill="#46684a">path /</text>
+    <rect x="700" y="210" width="205" height="74" rx="12" fill="#ffffff" stroke="#648c66" stroke-width="2"/><text x="802" y="241" font-size="17" font-weight="700" fill="#183544">API upstream</text><text x="802" y="265" font-size="13" fill="#46684a">path /api/</text>
+    <rect x="302" y="342" width="255" height="63" rx="12" fill="#fff1d9" stroke="#c28b38" stroke-width="2"/><text x="429" y="369" font-size="16" font-weight="700" fill="#694d23">Backend hanya percaya</text><text x="429" y="391" font-size="13" fill="#694d23">proxy pada network internal</text>
+  </g>
+  <g fill="none" stroke="#315b76" stroke-width="3" marker-end="url(#arrow)"><path d="M192 192 H292"/><path d="M567 158 C622 158 635 129 700 129"/><path d="M567 231 C625 231 635 247 700 247"/></g>
+  <path d="M802 284 V322 H557" fill="none" stroke="#c28b38" stroke-width="2" stroke-dasharray="7 6"/><text x="745" y="322" font-family="Arial,sans-serif" font-size="12" fill="#8b642b">jangan expose langsung</text>
+  <text x="40" y="430" font-family="Arial,sans-serif" font-size="13" fill="#526b77">Nilai header dari client tidak tepercaya sampai divalidasi dan ditetapkan ulang oleh proxy.</text>
+</svg>

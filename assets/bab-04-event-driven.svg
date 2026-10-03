@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="400" viewBox="0 0 960 400" role="img" aria-labelledby="title desc">
+  <title id="title">Konsep event-driven</title><desc id="desc">Worker event-driven memantau banyak koneksi dan memproses koneksi yang siap.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#315b76"/></marker></defs>
+  <rect width="960" height="400" rx="18" fill="#f3f7f8"/>
+  <text x="40" y="48" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#183544">Model event-driven pada worker</text>
+  <text x="40" y="75" font-family="Arial,sans-serif" font-size="15" fill="#526b77">Koneksi menunggu event tanpa harus menahan satu worker untuk setiap koneksi.</text>
+  <g font-family="Arial,sans-serif" text-anchor="middle">
+    <rect x="40" y="126" width="155" height="64" rx="12" fill="#ffffff" stroke="#98b4c0" stroke-width="2"/><text x="117" y="153" font-size="17" font-weight="700" fill="#183544">Client</text><text x="117" y="175" font-size="13" fill="#526b77">request / response</text>
+    <rect x="40" y="230" width="155" height="64" rx="12" fill="#ffffff" stroke="#98b4c0" stroke-width="2"/><text x="117" y="257" font-size="17" font-weight="700" fill="#183544">Client lain</text><text x="117" y="279" font-size="13" fill="#526b77">koneksi bersamaan</text>
+    <rect x="292" y="164" width="190" height="96" rx="14" fill="#d9edf1" stroke="#4a8794" stroke-width="2"/><text x="387" y="199" font-size="18" font-weight="700" fill="#183544">Event loop</text><text x="387" y="223" font-size="14" fill="#315b76">pantau koneksi siap</text><text x="387" y="243" font-size="14" fill="#315b76">baca / tulis event</text>
+    <rect x="586" y="164" width="170" height="96" rx="14" fill="#e4f0e3" stroke="#648c66" stroke-width="2"/><text x="671" y="199" font-size="18" font-weight="700" fill="#183544">Worker</text><text x="671" y="223" font-size="14" fill="#46684a">kerjakan event</text><text x="671" y="243" font-size="14" fill="#46684a">non-blocking I/O</text>
+    <rect x="820" y="164" width="100" height="96" rx="14" fill="#ffffff" stroke="#98b4c0" stroke-width="2"/><text x="870" y="204" font-size="16" font-weight="700" fill="#183544">Upstream</text><text x="870" y="229" font-size="13" fill="#526b77">bila perlu</text>
+  </g>
+  <g fill="none" stroke="#315b76" stroke-width="3" marker-end="url(#arrow)"><path d="M195 158 C235 158 250 181 292 190"/><path d="M195 262 C245 262 248 238 292 229"/><path d="M482 212 H586"/><path d="M756 212 H820"/></g>
+  <path d="M387 164 C420 108 510 108 548 154" fill="none" stroke="#76a889" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow)"/><text x="468" y="115" font-family="Arial,sans-serif" text-anchor="middle" font-size="13" fill="#46684a">event berikutnya</text>
+  <text x="40" y="352" font-family="Arial,sans-serif" font-size="14" fill="#526b77">Catatan: beban CPU, batas koneksi, dan kapasitas upstream tetap perlu dikelola.</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="440" viewBox="0 0 960 440" role="img" aria-labelledby="title desc">
+  <title id="title">Dua opsi TLS</title><desc id="desc">Terminasi TLS di proxy dan passthrough TLS sampai backend.</desc>
+  <rect width="960" height="440" rx="18" fill="#f3f7f8"/><text x="40" y="48" font-family="Arial,sans-serif" font-size="25" font-weight="700" fill="#183544">Dua pola TLS pada reverse proxy</text>
+  <g font-family="Arial,sans-serif">
+    <rect x="36" y="76" width="430" height="300" rx="15" fill="#ffffff" stroke="#98b4c0" stroke-width="2"/><rect x="494" y="76" width="430" height="300" rx="15" fill="#ffffff" stroke="#98b4c0" stroke-width="2"/>
+    <text x="60" y="112" font-size="20" font-weight="700" fill="#183544">A. Terminasi di proxy</text>
+    <rect x="62" y="159" width="98" height="62" rx="10" fill="#d9edf1" stroke="#4a8794"/><text x="111" y="196" text-anchor="middle" font-size="15" font-weight="700" fill="#183544">Client</text>
+    <rect x="218" y="151" width="118" height="78" rx="10" fill="#e8eef4" stroke="#66849a"/><text x="277" y="182" text-anchor="middle" font-size="15" font-weight="700" fill="#183544">Proxy</text><text x="277" y="205" text-anchor="middle" font-size="12" fill="#526b77">sertifikat TLS</text>
+    <rect x="390" y="159" width="56" height="62" rx="10" fill="#e4f0e3" stroke="#648c66"/><text x="418" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#183544">App</text>
+    <path d="M160 181 H218" stroke="#247b93" stroke-width="5"/><path d="M336 197 H390" stroke="#bd8750" stroke-width="5"/><text x="189" y="151" text-anchor="middle" font-size="12" fill="#247b93">TLS</text><text x="363" y="181" text-anchor="middle" font-size="12" fill="#9a6635">HTTP*</text>
+    <text x="60" y="268" font-size="13" fill="#526b77">Proxy mengelola sertifikat dan membuka request.</text><text x="60" y="290" font-size="13" fill="#526b77">Segmen internal perlu dilindungi oleh isolasi network</text><text x="60" y="312" font-size="13" fill="#526b77">atau gunakan TLS ulang ke backend.</text>
+    <text x="518" y="112" font-size="20" font-weight="700" fill="#183544">B. TLS passthrough</text>
+    <rect x="520" y="159" width="98" height="62" rx="10" fill="#d9edf1" stroke="#4a8794"/><text x="569" y="196" text-anchor="middle" font-size="15" font-weight="700" fill="#183544">Client</text>
+    <rect x="676" y="151" width="118" height="78" rx="10" fill="#e8eef4" stroke="#66849a"/><text x="735" y="182" text-anchor="middle" font-size="15" font-weight="700" fill="#183544">Proxy</text><text x="735" y="205" text-anchor="middle" font-size="12" fill="#526b77">teruskan TLS</text>
+    <rect x="848" y="159" width="56" height="62" rx="10" fill="#e4f0e3" stroke="#648c66"/><text x="876" y="196" text-anchor="middle" font-size="13" font-weight="700" fill="#183544">App</text>
+    <path d="M618 181 H676" stroke="#247b93" stroke-width="5"/><path d="M794 181 H848" stroke="#247b93" stroke-width="5"/><text x="647" y="151" text-anchor="middle" font-size="12" fill="#247b93">TLS</text><text x="820" y="151" text-anchor="middle" font-size="12" fill="#247b93">TLS</text>
+    <text x="518" y="268" font-size="13" fill="#526b77">Handshake berakhir di backend; proxy tidak membaca</text><text x="518" y="290" font-size="13" fill="#526b77">payload HTTP. Backend mengelola sertifikat.</text><text x="518" y="312" font-size="13" fill="#526b77">Routing konten HTTP tidak dilakukan di proxy.</text>
+  </g>
+  <text x="40" y="408" font-family="Arial,sans-serif" font-size="13" fill="#526b77">* HTTP internal hanya contoh; TLS re-encryption mengenkripsi koneksi proxy-ke-backend.</text>
+</svg>
